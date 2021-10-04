@@ -21,8 +21,8 @@ const DisplayInfo = ({transactions}) => {
                         return (
                             <tr key={index}>
                                 <td>{name}</td>
-                                <td>{price}</td>
                                 <td>{quantity < 0 ? quantity * -1 : quantity}</td>
+                                <td>${price}</td>
                                 <td>{quantity < 0 ? "Saída" : "Entrada"}</td>
                             </tr>
                         )

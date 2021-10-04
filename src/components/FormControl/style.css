@@ -2,6 +2,12 @@
     max-width: 500px;
     padding: 20px;
     box-sizing: border-box;
+    border: 4px double white;
+    margin-bottom: 15px;
+}
+
+.form__container h3 {
+    margin: 0;
 }
 
 .form__container span {
@@ -9,12 +15,19 @@
     color: #ff6868;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
 form > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin: 5px auto;
+    width: 100%;
 }
 
 select, input {
