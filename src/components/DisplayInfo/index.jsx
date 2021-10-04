@@ -14,7 +14,7 @@ const DisplayInfo = ({transactions}) => {
                 <tbody>
                     {transactions.map(({name, price, quantity}, index) => {
                         return (
-                            <tr>
+                            <tr key={index}>
                                 <td>{name}</td>
                                 <td>{price}</td>
                                 <td>{quantity < 0 ? quantity * -1 : quantity}</td>

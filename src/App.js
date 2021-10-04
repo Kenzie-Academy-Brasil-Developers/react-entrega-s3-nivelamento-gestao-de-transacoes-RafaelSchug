@@ -4,6 +4,7 @@ import DisplaySaidaFrutas from './components/DisplaySaidaFrutas';
 import DisplayEntradaFrutas from './components/DisplayEntradaFrutas';
 import FormControl from './components/FormControl';
 import DisplayInfo from './components/DisplayInfo';
+import DisplayControl from './components/DisplayControl';
 
 function App() {
 
@@ -13,12 +14,15 @@ function App() {
     {name: "laranja", quantity: 50, price: 6 },
   ])
 
+  const [display, setDisplay] = useState('entradas');
+
   return (
     <div className="App">
       <header className="App-header">
-        <DisplaySaidaFrutas></DisplaySaidaFrutas>
-        <DisplayEntradaFrutas></DisplayEntradaFrutas>
         <FormControl transactions={transactions} setTransactions={setTransactions}></FormControl>
+        <DisplayControl display={display} setDisplay={setDisplay}></DisplayControl>
+        {display === 'saídas' && <DisplaySaidaFrutas transactions={transactions}></DisplaySaidaFrutas>}
+        {display === 'entradas' && <DisplayEntradaFrutas transactions={transactions}></DisplayEntradaFrutas>}
         <DisplayInfo transactions={transactions}></DisplayInfo>
       </header>
     </div>
